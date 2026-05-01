@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nslookup -type=SRV _mongodb._tcp.cluster0.wfiv7av.mongodb.net)",
+      "PowerShell(Test-NetConnection -ComputerName ac-l0zbcsm-shard-00-00.wfiv7av.mongodb.net -Port 27017 -WarningAction SilentlyContinue)",
+      "PowerShell($result = Test-NetConnection -ComputerName ac-l0zbcsm-shard-00-00.wfiv7av.mongodb.net -Port 27017 -WarningAction SilentlyContinue -InformationLevel Quiet; Write-Output \"TCP Connect result: $result\")"
+    ]
+  }
+}
