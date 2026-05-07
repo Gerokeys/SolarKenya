@@ -5,16 +5,16 @@ export default {
     extend: {
       colors: {
         ember: {
-          50:  '#FFFBEB',
-          100: '#FEF3C7',
-          200: '#FDE68A',
-          300: '#FCD34D',
-          400: '#FBBF24',
-          500: '#F59E0B',  // Warm amber — primary brand
-          600: '#D97706',  // Hover
-          700: '#B45309',
-          800: '#92400E',
-          900: '#78350F',
+          50:  '#FFF7ED',
+          100: '#FFEDD5',
+          200: '#FED7AA',
+          300: '#FDBA74',
+          400: '#FB923C',
+          500: '#F97316',  // True orange — primary brand (30%)
+          600: '#EA580C',  // Hover
+          700: '#C2410C',
+          800: '#9A3412',
+          900: '#7C2D12',
         },
         coal: {
           DEFAULT: '#111111',
@@ -23,12 +23,12 @@ export default {
           200: '#141414',
         },
         cream: {
-          DEFAULT: '#F8F8F6',
+          DEFAULT: '#FFFFFF',  // 60% white background
           light: '#FFFFFF',
-          dark:  '#EDEDE9',
-          deep:  '#DEDEDA',
+          dark:  '#F9F9F9',
+          deep:  '#F3F3F3',
         },
-        citron: '#22C55E',   // Clean forest green — secondary accent
+        citron: '#16A34A',   // Deep green — 10% accent
         ash:    '#6B7280',
         muted:  '#9CA3AF',
       },

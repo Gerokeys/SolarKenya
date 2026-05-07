@@ -1,9 +1,10 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
+import LoadingScreen from './components/LoadingScreen';
 
 // Lazy-loaded pages for code splitting
 const Home = lazy(() => import('./pages/Home'));
@@ -39,10 +40,14 @@ const PublicLayout = ({ children }) => {
   );
 };
 
-const App = () => (
-  <AuthProvider>
-    <Suspense fallback={<PageLoader />}>
-      <PublicLayout>
+const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  return (
+    <AuthProvider>
+      {loading && <LoadingScreen onDone={() => setLoading(false)} />}
+      <Suspense fallback={<PageLoader />}>
+        <PublicLayout>
         <Routes>
           {/* Public */}
           <Route path="/" element={<Home />} />
@@ -72,9 +77,10 @@ const App = () => (
             }
           />
         </Routes>
-      </PublicLayout>
-    </Suspense>
-  </AuthProvider>
-);
+        </PublicLayout>
+      </Suspense>
+    </AuthProvider>
+  );
+};
 
 export default App;

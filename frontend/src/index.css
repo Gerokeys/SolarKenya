@@ -9,7 +9,7 @@
 
   body {
     @apply font-sans text-coal antialiased;
-    background-color: #F8F8F6;
+    background-color: #FFFFFF;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -92,8 +92,113 @@
   z-index: 2;
 }
 
+/* ── Loading Screen ─────────────────────────────────────────── */
+.loader-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #111111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: transform 0.55s cubic-bezier(0.76, 0, 0.24, 1),
+              opacity 0.55s ease;
+}
+
+.loader-exit {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* Sun SVG */
+.loader-sun {
+  width: 80px;
+  height: 80px;
+  animation: loaderSunSpin 12s linear infinite;
+}
+
+.loader-circle {
+  stroke-dasharray: 100.5;
+  stroke-dashoffset: 100.5;
+  animation: loaderDraw 0.6s ease forwards 0.1s;
+  stroke: #F97316;
+}
+
+.loader-ray {
+  opacity: 0;
+  animation: loaderFadeIn 0.2s ease forwards;
+}
+
+/* Wordmark */
+.loader-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: loaderWordmark 0.5s ease forwards 0.5s;
+}
+
+.loader-solar {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.25em;
+  color: #F8F8F6;
+  line-height: 1;
+}
+
+.loader-kenya {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.5em;
+  color: #16A34A;
+  text-transform: uppercase;
+}
+
+/* Progress bar */
+.loader-bar-track {
+  width: 120px;
+  height: 1.5px;
+  background: #2D2D2D;
+  overflow: hidden;
+  opacity: 0;
+  animation: loaderFadeIn 0.3s ease forwards 0.7s;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #F97316, #16A34A);
+  animation: loaderProgress 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.8s;
+}
+
+@keyframes loaderDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes loaderFadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes loaderWordmark {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes loaderProgress {
+  to { width: 100%; }
+}
+
+@keyframes loaderSunSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+/* ─────────────────────────────────────────────────────────── */
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #F8F8F6; }
-::-webkit-scrollbar-thumb { background: #F59E0B; border-radius: 0; }
-::-webkit-scrollbar-thumb:hover { background: #22C55E; }
+::-webkit-scrollbar-track { background: #FFFFFF; }
+::-webkit-scrollbar-thumb { background: #F97316; border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: #16A34A; }
