@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-cream border-b-2 border-coal/10 shadow-sm' : 'bg-transparent'
+      menuOpen ? 'bg-coal' : scrolled ? 'bg-cream border-b-2 border-coal/10 shadow-sm' : 'bg-transparent'
     }`}>
       <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between py-4">
@@ -39,7 +39,7 @@ const Navbar = () => {
               </svg>
             </div>
             <span className={`font-display text-2xl tracking-wider transition-colors leading-none ${
-              scrolled ? 'text-coal' : 'text-white'
+              menuOpen ? 'text-white' : scrolled ? 'text-coal' : 'text-white'
             }`}>
               SOLAR<span className="text-ember-500">KENYA</span>
             </span>
@@ -92,7 +92,7 @@ const Navbar = () => {
 
           {/* Mobile hamburger */}
           <button
-            className={`md:hidden p-2 transition-colors ${scrolled ? 'text-coal' : 'text-white'}`}
+            className={`md:hidden p-2 transition-colors relative z-[60] ${menuOpen ? 'text-white' : scrolled ? 'text-coal' : 'text-white'}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -103,35 +103,57 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-cream border-t-2 border-coal/10">
-          <div className="px-6 py-4 flex flex-col">
-            {navLinks.map(({ to, label }) => (
-              <NavLink
-                key={to}
-                to={to}
-                end={to === '/'}
-                onClick={() => setMenuOpen(false)}
-                className={({ isActive }) =>
-                  `py-3.5 text-sm font-sans font-medium border-b border-coal/5 transition-colors ${
-                    isActive ? 'text-ember-500' : 'text-coal hover:text-ember-500'
-                  }`
-                }
-              >
-                {label}
-              </NavLink>
-            ))}
-            <Link
-              to="/contact?type=quote"
+      {/* Mobile full-screen overlay */}
+      <div className={`mobile-overlay md:hidden${menuOpen ? ' mobile-overlay--open' : ''}`}>
+        {/* Decorative sun */}
+        <svg className="mobile-overlay__sun" viewBox="0 0 400 400" fill="none">
+          <circle cx="200" cy="200" r="80" stroke="#F97316" strokeWidth="1.5" opacity="0.12" />
+          <circle cx="200" cy="200" r="130" stroke="#F97316" strokeWidth="1" opacity="0.07" />
+          <circle cx="200" cy="200" r="180" stroke="#F97316" strokeWidth="0.5" opacity="0.04" />
+          {Array.from({ length: 12 }, (_, i) => {
+            const a = (i * 30 * Math.PI) / 180;
+            return (
+              <line
+                key={i}
+                x1={200 + 95 * Math.cos(a)} y1={200 + 95 * Math.sin(a)}
+                x2={200 + 120 * Math.cos(a)} y2={200 + 120 * Math.sin(a)}
+                stroke="#F97316" strokeWidth="1.5" opacity="0.15"
+              />
+            );
+          })}
+        </svg>
+
+        <div className="mobile-overlay__links">
+          {navLinks.map(({ to, label }, i) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={to === '/'}
               onClick={() => setMenuOpen(false)}
-              className="btn-sun text-sm py-3.5 mt-4 text-center"
+              style={{ animationDelay: menuOpen ? `${0.08 + i * 0.07}s` : '0s' }}
+              className={({ isActive }) =>
+                `mobile-nav-link${isActive ? ' mobile-nav-link--active' : ''}`
+              }
             >
-              Get Free Quote
-            </Link>
-          </div>
+              <span className="mobile-nav-link__num">0{i + 1}</span>
+              {label}
+            </NavLink>
+          ))}
         </div>
-      )}
+
+        <div className="mobile-overlay__footer" style={{ animationDelay: menuOpen ? '0.45s' : '0s' }}>
+          <Link
+            to="/contact?type=quote"
+            onClick={() => setMenuOpen(false)}
+            className="btn-sun w-full text-center py-4 text-sm"
+          >
+            Get Free Quote →
+          </Link>
+          <p className="text-white/20 text-xs font-sans tracking-widest uppercase mt-4 text-center">
+            Solar Kenya · Powering the Nation
+          </p>
+        </div>
+      </div>
     </nav>
   );
 };
