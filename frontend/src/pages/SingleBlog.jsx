@@ -4,6 +4,9 @@ import PageMeta from '../components/PageMeta';
 import BlogCard from '../components/BlogCard';
 import api from '../api/axios';
 
+const API_BASE = (import.meta.env.VITE_API_URL || '').replace('/api', '');
+const imgSrc = (src) => src?.startsWith('/uploads/') ? `${API_BASE}${src}` : src;
+
 const SingleBlog = () => {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
@@ -104,7 +107,7 @@ const SingleBlog = () => {
       {post.coverImage && (
         <div className="max-w-4xl mx-auto px-6 -mt-6 relative z-10">
           <div className="overflow-hidden border-2 border-coal/10 aspect-video">
-            <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover" />
+            <img src={imgSrc(post.coverImage)} alt={post.title} className="w-full h-full object-cover" />
           </div>
         </div>
       )}

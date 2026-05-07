@@ -33,6 +33,9 @@ const SunPlaceholder = ({ size = 'lg' }) => (
   </div>
 );
 
+const API_BASE = (import.meta.env.VITE_API_URL || '').replace('/api', '');
+const imgSrc = (src) => src?.startsWith('/uploads/') ? `${API_BASE}${src}` : src;
+
 const BlogCard = ({ post, featured = false }) => {
   const { title, slug, excerpt, coverImage, category, readTime, createdAt, author } = post;
 
@@ -52,7 +55,7 @@ const BlogCard = ({ post, featured = false }) => {
           <div className="relative overflow-hidden aspect-video md:aspect-auto min-h-[240px]">
             {coverImage ? (
               <img
-                src={coverImage}
+                src={imgSrc(coverImage)}
                 alt={title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -96,7 +99,7 @@ const BlogCard = ({ post, featured = false }) => {
       <div className="relative overflow-hidden aspect-video">
         {coverImage ? (
           <img
-            src={coverImage}
+            src={imgSrc(coverImage)}
             alt={title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
