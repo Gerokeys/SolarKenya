@@ -34,6 +34,7 @@ const leadLimiter = rateLimit({
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/blog', require('./routes/blog'));
 app.use('/api/leads', leadLimiter, require('./routes/leads'));
+app.use('/api/users', require('./routes/users'));
 
 // Health check
 app.get('/api/health', (req, res) => {

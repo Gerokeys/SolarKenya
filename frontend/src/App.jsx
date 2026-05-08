@@ -19,6 +19,7 @@ const Dashboard = lazy(() => import('./pages/admin/Dashboard'));
 const Posts = lazy(() => import('./pages/admin/Posts'));
 const PostEditor = lazy(() => import('./pages/admin/PostEditor'));
 const Leads = lazy(() => import('./pages/admin/Leads'));
+const Users = lazy(() => import('./pages/admin/Users'));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -64,6 +65,7 @@ const App = () => {
           <Route path="/admin/posts/new" element={<ProtectedRoute><PostEditor /></ProtectedRoute>} />
           <Route path="/admin/posts/edit/:id" element={<ProtectedRoute><PostEditor /></ProtectedRoute>} />
           <Route path="/admin/leads" element={<ProtectedRoute><Leads /></ProtectedRoute>} />
+          <Route path="/admin/users" element={<ProtectedRoute><Users /></ProtectedRoute>} />
 
           {/* 404 */}
           <Route
