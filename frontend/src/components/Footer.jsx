@@ -15,7 +15,7 @@ const Footer = () => {
             className="font-display text-white/8 hover:text-white/15 transition-colors select-none block"
             style={{ fontSize: 'clamp(3.5rem, 10vw, 8rem)', lineHeight: 1 }}
           >
-            SOLAR<span className="text-ember-500/25 hover:text-ember-500/40 transition-colors">KENYA</span>
+            SOLAR<span className="text-ember-500/25 hover:text-ember-500/40 transition-colors">LINK</span>
           </Link>
         </div>
 
@@ -30,7 +30,7 @@ const Footer = () => {
                 </svg>
               </div>
               <span className="font-display text-xl tracking-wider text-white leading-none">
-                SOLAR<span className="text-ember-500">KENYA</span>
+                SOLAR<span className="text-ember-500">LINK</span>
               </span>
             </Link>
             <p className="text-sm leading-relaxed font-sans mb-6">
@@ -91,8 +91,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@solarkenya.co.ke" className="hover:text-ember-400 transition-colors">
-                  info@solarkenya.co.ke
+                <a href="mailto:info@solarlink.co.ke" className="hover:text-ember-400 transition-colors">
+                  info@solarlink.co.ke
                 </a>
               </li>
               <li className="text-white/20">Mon–Sat: 8am – 6pm</li>
@@ -104,7 +104,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-sans">
-          <p>&copy; {year} SolarKenya. All rights reserved.</p>
+          <p>&copy; {year} SolarLink. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-ember-400 transition-colors">Privacy</a>
             <a href="#" className="hover:text-ember-400 transition-colors">Terms</a>

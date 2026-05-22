@@ -29,7 +29,7 @@ const Login = () => {
       <div
         className="hidden lg:flex lg:w-1/2 flex-col justify-between p-12 relative overflow-hidden"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80)',
+          backgroundImage: 'url(/images/solar5.jpeg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -37,7 +37,7 @@ const Login = () => {
         <div className="absolute inset-0 bg-coal/80" />
         <div className="relative z-10">
           <span className="font-display text-3xl tracking-wider text-white leading-none">
-            SOLAR<span className="text-ember-500">KENYA</span>
+            SOLAR<span className="text-ember-500">LINK</span>
           </span>
         </div>
         <div className="relative z-10">
@@ -62,7 +62,7 @@ const Login = () => {
           {/* Mobile logo */}
           <div className="lg:hidden mb-10 text-center">
             <span className="font-display text-2xl tracking-wider text-white leading-none">
-              SOLAR<span className="text-ember-500">KENYA</span>
+              SOLAR<span className="text-ember-500">LINK</span>
             </span>
           </div>
 

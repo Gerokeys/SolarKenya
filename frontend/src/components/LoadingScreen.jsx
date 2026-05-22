@@ -37,7 +37,7 @@ const LoadingScreen = ({ onDone }) => {
       {/* Wordmark */}
       <div className="loader-wordmark">
         <span className="loader-solar">SOLAR</span>
-        <span className="loader-kenya">KENYA</span>
+        <span className="loader-kenya">LINK</span>
       </div>
 
       {/* Progress bar */}

@@ -41,7 +41,7 @@ const Navbar = () => {
             <span className={`font-display text-2xl tracking-wider transition-colors leading-none ${
               menuOpen ? 'text-white' : scrolled ? 'text-coal' : 'text-white'
             }`}>
-              SOLAR<span className="text-ember-500">KENYA</span>
+              SOLAR<span className="text-ember-500">LINK</span>
             </span>
           </Link>
 
@@ -150,7 +150,7 @@ const Navbar = () => {
             Get Free Quote →
           </Link>
           <p className="text-white/20 text-xs font-sans tracking-widest uppercase mt-4 text-center">
-            Solar Kenya · Powering the Nation
+            Solar Link · Powering the Nation
           </p>
         </div>
       </div>

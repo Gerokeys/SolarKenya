@@ -9,10 +9,10 @@ import api from '../api/axios';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HERO_BG = 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1920&q=80';
-const INSTALL_BG = 'https://images.unsplash.com/photo-1548613053-22087dd8edb8?auto=format&fit=crop&w=1920&q=80';
-const TRUST_IMG = 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=80';
-const ROOF_IMG = 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=80';
+const HERO_BG = '/images/solar5.jpeg';
+const INSTALL_BG = '/images/solar3.jpeg';
+const TRUST_IMG = '/images/solar2.jpeg';
+const ROOF_IMG = '/images/solar1.jpeg';
 
 const STATS = [
   { value: '500+', label: 'Installations' },

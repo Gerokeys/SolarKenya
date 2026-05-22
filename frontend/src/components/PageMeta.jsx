@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 const PageMeta = ({ title, description, image, url }) => {
-  const siteName = 'SolarKenya';
+  const siteName = 'SolarLink';
   const defaultDesc = 'Kenya\'s leading solar energy platform — cost calculators, expert guides, and installation services.';
   const fullTitle = title ? `${title} | ${siteName}` : `${siteName} — Clean Energy For Every Home`;
 

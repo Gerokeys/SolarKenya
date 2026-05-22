@@ -83,7 +83,7 @@ const Blog = () => {
           {/* Image side */}
           <div className="hidden lg:block relative">
             <img
-              src="https://images.unsplash.com/photo-1548613053-22087dd8edb8?auto=format&fit=crop&w=900&q=80"
+              src="/images/solar2.jpeg"
               alt="Solar panel installation"
               className="absolute inset-0 w-full h-full object-cover opacity-60"
             />

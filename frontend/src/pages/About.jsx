@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 import SectionWrapper from '../components/SectionWrapper';
 import PageMeta from '../components/PageMeta';
 
-const HERO_BG = 'https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=1920&q=80';
-const MISSION_IMG = 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=900&q=80';
-const INSTALL_IMG = 'https://images.unsplash.com/photo-1548613053-22087dd8edb8?auto=format&fit=crop&w=900&q=80';
+const HERO_BG = '/images/solar2.jpeg';
+const MISSION_IMG = '/images/solar1.jpeg';
+const INSTALL_IMG = '/images/solar3.jpeg';
 
 const TEAM = [
-  { name: 'James Ochieng', role: 'Founder & CEO', bio: 'ERC-certified solar engineer with 10+ years in renewable energy across East Africa.', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80' },
-  { name: 'Wanjiru Kamau', role: 'Lead Installer', bio: 'Specializes in off-grid and hybrid systems for rural Kenya. 200+ installations.', img: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=300&q=80' },
-  { name: 'Kevin Mutua', role: 'Technical Advisor', bio: 'MSc in Electrical Engineering. Expert in grid-tied solar and battery storage systems.', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80' },
+  { name: 'Lilian Rabera', role: 'Founder & CEO', bio: 'Founder of SolarLink, passionate about bringing clean, affordable solar energy to every Kenyan home and business.' },
+  { name: 'Wanjiru Kamau', role: 'Lead Installer', bio: 'Specializes in off-grid and hybrid systems for rural Kenya. 200+ installations.' },
+  { name: 'Kevin Mutua', role: 'Technical Advisor', bio: 'MSc in Electrical Engineering. Expert in grid-tied solar and battery storage systems.' },
 ];
 
 const VALUES = [
@@ -21,7 +21,7 @@ const VALUES = [
 
 const About = () => (
   <>
-    <PageMeta title="About Us" description="Learn about SolarKenya — our mission, team, and commitment to clean energy across all 47 counties." />
+    <PageMeta title="About Us" description="Learn about SolarLink — our mission, team, and commitment to clean energy across all 47 counties." />
 
     {/* ─── Hero with background photo ─── */}
     <section
@@ -38,7 +38,7 @@ const About = () => (
           POWERING<br />KENYA'S<br /><span className="text-ember-500">SOLAR FUTURE</span>
         </h1>
         <p className="text-white/55 text-xl leading-relaxed max-w-xl mt-8 font-sans">
-          Founded in Nairobi in 2019, SolarKenya exists to make clean, reliable solar energy accessible to every Kenyan home and business — from Westlands to Wajir.
+          Founded in Nairobi in 2019, SolarLink exists to make clean, reliable solar energy accessible to every Kenyan home and business — from Westlands to Wajir.
         </p>
       </div>
     </section>
@@ -147,16 +147,16 @@ const About = () => (
           <h2 className="section-title">The Team Behind<br /><em>the Solar</em></h2>
         </div>
         <div className="grid md:grid-cols-3 gap-px bg-coal/10 max-w-4xl">
-          {TEAM.map(({ name, role, bio, img }) => (
+          {TEAM.map(({ name, role, bio }) => (
             <div key={name} className="bg-cream-light group hover:bg-cream-dark transition-colors overflow-hidden">
-              {/* Photo */}
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={img}
-                  alt={name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-coal/20 group-hover:bg-coal/10 transition-colors" />
+              {/* Initials placeholder */}
+              <div className="h-48 bg-coal flex items-center justify-center relative">
+                <span className="font-display text-6xl text-ember-500 leading-none select-none">
+                  {name.split(' ').map(n => n[0]).join('')}
+                </span>
+                <div className="absolute bottom-3 right-3 bg-ember-500/10 border border-ember-500/20 px-2 py-1">
+                  <span className="font-sans text-xs text-ember-400 tracking-widest uppercase">Photo coming soon</span>
+                </div>
               </div>
               {/* Info */}
               <div className="p-6">
