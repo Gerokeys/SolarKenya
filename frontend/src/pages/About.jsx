@@ -7,7 +7,7 @@ const MISSION_IMG = '/images/solar1.jpeg';
 const INSTALL_IMG = '/images/solar3.jpeg';
 
 const TEAM = [
-  { name: 'Lilian Rabera', role: 'Founder & CEO', bio: 'Founder of SolarLink, passionate about bringing clean, affordable solar energy to every Kenyan home and business.' },
+  { name: 'Lilian Rabera', role: 'Founder & CEO', bio: 'Founder of Solar Link Kenya, passionate about bringing clean, affordable solar energy to every Kenyan home and business.' },
   { name: 'Wanjiru Kamau', role: 'Lead Installer', bio: 'Specializes in off-grid and hybrid systems for rural Kenya. 200+ installations.' },
   { name: 'Kevin Mutua', role: 'Technical Advisor', bio: 'MSc in Electrical Engineering. Expert in grid-tied solar and battery storage systems.' },
 ];
@@ -21,7 +21,7 @@ const VALUES = [
 
 const About = () => (
   <>
-    <PageMeta title="About Us" description="Learn about SolarLink — our mission, team, and commitment to clean energy across all 47 counties." />
+    <PageMeta title="About Us" description="Learn about Solar Link Kenya — our mission, team, and commitment to clean energy across all 47 counties." />
 
     {/* ─── Hero with background photo ─── */}
     <section
@@ -38,7 +38,7 @@ const About = () => (
           POWERING<br />KENYA'S<br /><span className="text-ember-500">SOLAR FUTURE</span>
         </h1>
         <p className="text-white/55 text-xl leading-relaxed max-w-xl mt-8 font-sans">
-          Founded in Nairobi in 2019, SolarLink exists to make clean, reliable solar energy accessible to every Kenyan home and business — from Westlands to Wajir.
+          Founded in Nairobi in 2019, Solar Link Kenya exists to make clean, reliable solar energy accessible to every Kenyan home and business — from Westlands to Wajir.
         </p>
       </div>
     </section>

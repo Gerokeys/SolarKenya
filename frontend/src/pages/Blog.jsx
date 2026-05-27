@@ -4,7 +4,27 @@ import BlogCard from '../components/BlogCard';
 import PageMeta from '../components/PageMeta';
 import api from '../api/axios';
 
-const CATEGORIES = ['All', 'Solar Panels', 'Batteries', 'Costs', 'Installation', 'News', 'Tips'];
+const CATEGORIES = [
+  { label: 'All', value: 'All', subs: [] },
+  {
+    label: 'Solar Panels', value: 'Solar Panels', subs: [
+      { label: 'Solar 101', value: 'Solar 101' },
+      { label: 'Cost Guides', value: 'Solar Panels - Cost Guides' },
+      { label: 'System Sizes', value: 'Solar Panels - System Sizes' },
+    ],
+  },
+  {
+    label: 'Solar Batteries', value: 'Solar Batteries', subs: [
+      { label: 'Battery 101', value: 'Battery 101' },
+      { label: 'Cost Guides', value: 'Solar Batteries - Cost Guides' },
+      { label: 'System Sizes', value: 'Solar Batteries - System Sizes' },
+    ],
+  },
+  { label: 'Solar Inverters', value: 'Solar Inverters', subs: [] },
+  { label: 'Solar Hot Water Systems', value: 'Solar Hot Water Systems', subs: [] },
+  { label: 'Reviews', value: 'Reviews', subs: [] },
+  { label: 'News', value: 'News', subs: [] },
+];
 
 const Blog = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -13,6 +33,7 @@ const Blog = () => {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [searchInput, setSearchInput] = useState('');
+  const [expandedParent, setExpandedParent] = useState(null);
 
   const category = searchParams.get('category') || 'All';
   const page = parseInt(searchParams.get('page') || '1');
@@ -101,21 +122,54 @@ const Blog = () => {
       </section>
 
       <div className="max-w-screen-xl mx-auto px-6 lg:px-10 py-12">
-        {/* Category tabs */}
-        <div className="flex flex-wrap gap-2 mb-10">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setCategory(cat)}
-              className={`px-4 py-2 text-sm font-sans font-medium border-2 tracking-wide transition-all ${
-                category === cat
-                  ? 'bg-ember-500 text-coal border-ember-500'
-                  : 'bg-cream-light text-coal border-coal/10 hover:border-citron'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        {/* Category filter */}
+        <div className="mb-10">
+          {/* Parent categories */}
+          <div className="flex flex-wrap gap-2 mb-3">
+            {CATEGORIES.map((cat) => {
+              const isActive = category === cat.value || cat.subs.some(s => s.value === category);
+              return (
+                <button
+                  key={cat.value}
+                  onClick={() => {
+                    setCategory(cat.value);
+                    setExpandedParent(cat.subs.length > 0 ? (expandedParent === cat.value ? null : cat.value) : null);
+                  }}
+                  className={`px-4 py-2 text-sm font-sans font-semibold border-2 tracking-wide transition-all flex items-center gap-1.5 ${
+                    isActive
+                      ? 'bg-ember-500 text-coal border-ember-500'
+                      : 'bg-white text-coal border-coal/10 hover:border-ember-400'
+                  }`}
+                >
+                  {cat.label}
+                  {cat.subs.length > 0 && (
+                    <span className={`text-xs transition-transform ${expandedParent === cat.value ? 'rotate-180' : ''}`}>▾</span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Subcategories */}
+          {CATEGORIES.map((cat) =>
+            cat.subs.length > 0 && expandedParent === cat.value ? (
+              <div key={cat.value} className="flex flex-wrap gap-2 pl-4 border-l-2 border-ember-500/30">
+                {cat.subs.map((sub) => (
+                  <button
+                    key={sub.value}
+                    onClick={() => setCategory(sub.value)}
+                    className={`px-3 py-1.5 text-xs font-sans font-medium border-2 tracking-wide transition-all ${
+                      category === sub.value
+                        ? 'bg-citron text-coal border-citron'
+                        : 'bg-white text-coal border-coal/10 hover:border-citron'
+                    }`}
+                  >
+                    {sub.label}
+                  </button>
+                ))}
+              </div>
+            ) : null
+          )}
         </div>
 
         {loading ? (

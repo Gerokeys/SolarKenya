@@ -3,7 +3,18 @@ import { useNavigate, useParams, Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import api from '../../api/axios';
 
-const CATEGORIES = ['Solar Panels', 'Batteries', 'Costs', 'Installation', 'News', 'Tips'];
+const CATEGORIES = [
+  'Solar 101',
+  'Solar Panels - Cost Guides',
+  'Solar Panels - System Sizes',
+  'Battery 101',
+  'Solar Batteries - Cost Guides',
+  'Solar Batteries - System Sizes',
+  'Solar Inverters',
+  'Solar Hot Water Systems',
+  'Reviews',
+  'News',
+];
 
 const AdminNav = ({ title }) => (
   <nav className="bg-coal border-b-2 border-ember-500/20 px-6 py-4 flex items-center justify-between sticky top-0 z-40">
@@ -13,7 +24,7 @@ const AdminNav = ({ title }) => (
       </Link>
       <span className="text-white/20">|</span>
       <span className="font-display text-xl tracking-wider text-white leading-none">
-        SOLAR<span className="text-ember-500">LINK</span>
+        SOLAR LINK<span className="text-citron"> KENYA</span>
         <span className="text-white/30 text-xs ml-3 font-sans tracking-[0.2em] uppercase">Admin</span>
       </span>
     </div>

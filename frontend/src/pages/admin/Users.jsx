@@ -12,7 +12,7 @@ const AdminNav = () => (
       </Link>
       <span className="text-white/20">|</span>
       <span className="font-display text-xl tracking-wider text-white leading-none">
-        SOLAR<span className="text-ember-500">LINK</span>
+        SOLAR LINK<span className="text-citron"> KENYA</span>
         <span className="text-white/30 text-xs ml-3 font-sans tracking-[0.2em] uppercase">Admin</span>
       </span>
     </div>

@@ -25,9 +25,6 @@ const BENEFITS = [
   { num: '01', title: 'Cut Your KPLC Bill by 80%', desc: 'Most customers see dramatic reduction in monthly electricity bills within the first month of going solar.' },
   { num: '02', title: "Kenya's Ideal Solar Climate", desc: 'Kenya enjoys 5–7 peak sun hours daily, among the best conditions in Africa for solar energy generation.' },
   { num: '03', title: 'Power Through Outages', desc: 'Hybrid battery systems keep your home running during frequent grid outages — no more disruptions.' },
-  { num: '04', title: 'Long-Term Investment', desc: 'Modern panels last 25+ years with minimal maintenance. Payback period as low as 3–5 years.' },
-  { num: '05', title: 'Flexible Financing', desc: 'Available through M-Pesa Pay, SACCO loans, and solar financing schemes — pay as you save.' },
-  { num: '06', title: 'Expert Local Installation', desc: 'Our ERC-certified engineers have installed solar in all 47 counties across Kenya.' },
 ];
 
 const Home = () => {

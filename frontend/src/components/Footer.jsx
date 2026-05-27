@@ -15,7 +15,7 @@ const Footer = () => {
             className="font-display text-white/8 hover:text-white/15 transition-colors select-none block"
             style={{ fontSize: 'clamp(3.5rem, 10vw, 8rem)', lineHeight: 1 }}
           >
-            SOLAR<span className="text-ember-500/25 hover:text-ember-500/40 transition-colors">LINK</span>
+            SOLAR LINK<span className="text-citron/25 hover:text-citron/40 transition-colors"> KENYA</span>
           </Link>
         </div>
 
@@ -30,7 +30,7 @@ const Footer = () => {
                 </svg>
               </div>
               <span className="font-display text-xl tracking-wider text-white leading-none">
-                SOLAR<span className="text-ember-500">LINK</span>
+                SOLAR LINK<span className="text-citron"> KENYA</span>
               </span>
             </Link>
             <p className="text-sm leading-relaxed font-sans mb-6">
@@ -104,7 +104,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-sans">
-          <p>&copy; {year} SolarLink. All rights reserved.</p>
+          <p>&copy; {year} Solar Link Kenya. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-ember-400 transition-colors">Privacy</a>
             <a href="#" className="hover:text-ember-400 transition-colors">Terms</a>
