@@ -37,7 +37,7 @@ const Login = () => {
         <div className="absolute inset-0 bg-coal/80" />
         <div className="relative z-10">
           <span className="font-display text-3xl tracking-wider text-white leading-none">
-            SOLAR LINK<span className="text-citron"> KENYA</span>
+            SOLAR<span className="text-ember-500">LINK</span><span className="text-citron"> KENYA</span>
           </span>
         </div>
         <div className="relative z-10">
@@ -62,7 +62,7 @@ const Login = () => {
           {/* Mobile logo */}
           <div className="lg:hidden mb-10 text-center">
             <span className="font-display text-2xl tracking-wider text-white leading-none">
-              SOLAR LINK<span className="text-citron"> KENYA</span>
+              SOLAR<span className="text-ember-500">LINK</span><span className="text-citron"> KENYA</span>
             </span>
           </div>
 

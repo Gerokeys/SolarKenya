@@ -36,7 +36,7 @@ const LoadingScreen = ({ onDone }) => {
 
       {/* Wordmark */}
       <div className="loader-wordmark">
-        <span className="loader-solar">SOLAR LINK</span>
+        <span className="loader-solar">SOLAR<span style={{color:'#F97316'}}>LINK</span></span>
         <span className="loader-kenya">KENYA</span>
       </div>
 

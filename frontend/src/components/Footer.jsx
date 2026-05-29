@@ -15,7 +15,7 @@ const Footer = () => {
             className="font-display text-white/8 hover:text-white/15 transition-colors select-none block"
             style={{ fontSize: 'clamp(3.5rem, 10vw, 8rem)', lineHeight: 1 }}
           >
-            SOLAR LINK<span className="text-citron/25 hover:text-citron/40 transition-colors"> KENYA</span>
+            SOLAR<span className="text-ember-500/25 hover:text-ember-500/40 transition-colors">LINK</span><span className="text-citron/25 hover:text-citron/40 transition-colors"> KENYA</span>
           </Link>
         </div>
 
@@ -30,7 +30,7 @@ const Footer = () => {
                 </svg>
               </div>
               <span className="font-display text-xl tracking-wider text-white leading-none">
-                SOLAR LINK<span className="text-citron"> KENYA</span>
+                SOLAR<span className="text-ember-500">LINK</span><span className="text-citron"> KENYA</span>
               </span>
             </Link>
             <p className="text-sm leading-relaxed font-sans mb-6">
@@ -70,13 +70,12 @@ const Footer = () => {
           <div>
             <h4 className="font-sans text-xs tracking-[0.2em] uppercase font-semibold text-ember-500 mb-5">Blog Topics</h4>
             <ul className="space-y-2.5 text-sm font-sans">
-              {['Solar Panels', 'Batteries', 'Costs', 'Installation', 'News', 'Tips'].map((cat) => (
-                <li key={cat}>
-                  <Link to={`/blog?category=${cat}`} className="hover:text-ember-400 transition-colors">
-                    {cat}
-                  </Link>
-                </li>
-              ))}
+              <li><Link to="/blog?category=Solar Panels" className="hover:text-ember-400 transition-colors">Solar Panels</Link></li>
+              <li><Link to="/blog?category=Solar Batteries" className="hover:text-ember-400 transition-colors">Solar Batteries</Link></li>
+              <li><Link to="/blog?category=Solar Inverters" className="hover:text-ember-400 transition-colors">Solar Inverters</Link></li>
+              <li><Link to="/blog?category=Solar Hot Water Systems" className="hover:text-ember-400 transition-colors">Solar Hot Water</Link></li>
+              <li><Link to="/blog?category=Reviews" className="hover:text-ember-400 transition-colors">Reviews</Link></li>
+              <li><Link to="/blog?category=News" className="hover:text-ember-400 transition-colors">News</Link></li>
             </ul>
           </div>
 

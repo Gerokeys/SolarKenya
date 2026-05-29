@@ -41,7 +41,7 @@ const Navbar = () => {
             <span className={`font-display text-2xl tracking-wider transition-colors leading-none ${
               menuOpen ? 'text-white' : scrolled ? 'text-coal' : 'text-white'
             }`}>
-              SOLAR LINK<span className="text-citron"> KENYA</span>
+              SOLAR<span className="text-ember-500">LINK</span><span className="text-citron"> KENYA</span>
             </span>
           </Link>
 

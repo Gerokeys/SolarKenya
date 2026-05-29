@@ -8,7 +8,7 @@ const AdminNav = () => {
   return (
     <nav className="bg-coal border-b-2 border-ember-500/20 px-6 py-4 flex items-center justify-between sticky top-0 z-40">
       <span className="font-display text-xl tracking-wider text-white leading-none">
-        SOLAR LINK<span className="text-citron"> KENYA</span>
+        SOLAR<span className="text-ember-500">LINK</span><span className="text-citron"> KENYA</span>
         <span className="text-white/30 text-xs ml-3 font-sans tracking-[0.2em] uppercase">Admin</span>
       </span>
       <div className="flex items-center gap-6">
